@@ -3,7 +3,8 @@ In this exercise we are going to create a parrot named echo, why echo? Because i
 want it to.
 
 ## Purpose
-This exercise is meant to teach you how to create a basic terminal program that can accept user input.
+This exercise is meant to teach you how to create a basic terminal program that can accept user input. Thereby 
+providing a foundation for future terminal programs.
 
 ## Learning goals
 - Reading from the terminal
@@ -93,7 +94,7 @@ The exercise comes with the Parrot class, now I want you to fill it out. What sh
 
 The two requested parrot features require different tools. Think of the name as data for a specific parrot, whereas 
 the repeat feature is logic. We cannot always use a loop when we need repeatable logic, and that is the case here. How 
-can we add a feature so that a parrot can repeat a given word?
+can we add a feature so that a parrot can repeat a given word by printing it to the screen?
 
 <details>feature
     <summary>Name hint</summary>
@@ -184,8 +185,9 @@ Now we need to take the user input and make our parrot repeat it. You should alr
 "Terminating the program" section. Now you just need to feed it to the parrot trough it's repeat method.
 
 #### Extra
-How do we prevent the parrot from repeating the input when we want to exit the program? When the input is not the 
-word for exiting the program, we want to terminate the program
+How do we prevent the parrot from repeating the input when we want to exit the program?
+When whatever word you chose for exiting the program is entered, the parrot should not repeat it, otherwise we want to 
+repeat it.
 
 <details>
     <summary>Hint</summary>
@@ -194,15 +196,10 @@ word for exiting the program, we want to terminate the program
     The example below is similar to what we want for our echo program.
 ```java
 public void example() {
-    Scanner scanner = new Scanner(System.in);
-
-    while (keepAlive) {
-        String input = scanner.nextLine();
-        if (input.equals("exit")) {
-            keepAlive = false;
-        } else {
-            System.out.println("Not exit");
-        }
+    if (input.equals("exit")) {
+        keepAlive = false;
+    } else {
+        System.out.println("Not exit");
     }
 }
 ```
